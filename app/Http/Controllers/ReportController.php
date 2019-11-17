@@ -108,4 +108,16 @@ class ReportController extends Controller
 
         return view('reports.in', $data);
     }
+     // stock out report
+     public function out()
+     {
+         $data['whs'] = DB::table('warehouses')
+             ->where('active', 1)
+             ->get();
+         $data['warehouse'] = '';
+         $data['result'] = [];
+         $data['from'] = date('Y-m-d');
+         $data['to'] = date('Y-m-d');
+         return view('reports.out', $data);
+     }
 }

@@ -88,6 +88,10 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('report/in', 'ReportController@in');
     Route::get('report/in/search', 'ReportController@in_search');
     Route::get('report/in/print', 'ReportController@in_print');
+    // stock out report
+    Route::get('report/out', 'ReportController@out');
+    Route::get('report/out/search', 'ReportController@out_search');
+    Route::get('report/out/print', 'ReportController@out_print');
 });
 
 Auth::routes();
